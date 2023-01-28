@@ -1,0 +1,29 @@
+
+from visual import *
+import numpy as np
+scene2 = display(title='SUBHASH VUNDAVALLI',
+     x=0, y=50, width=800, height=800,
+     center=(5,0,0), background=(0,1,1))
+label( pos=vector(8,8,3),color=color.black, text='Thermometer animation  with python by subhash vundavalli' )
+bulb = sphere(radius=1.25,color=color.white,opacity=0.5)
+bulb2 = sphere(pos=vector(0,0,10),radius=1.25,color=color.white,opacity=0.5)
+glass = cylinder(radius=0.75,length=6,color=color.white,opacity=0.5)
+glass2 = cylinder(pos=vector(0,0,10),radius=0.75,length=6,color=color.white,opacity=0.5)
+mercury = sphere(radius=1,color=color.red,)
+mercury2 = sphere(pos=vector(0,0,10),radius=1,color=color.red)
+col = cylinder(radius=0.45,length=6,color=color.red)
+col2 = cylinder(pos=vector(0,0,10),radius=0.45,length=6,color=color.red)
+delta1=0.01
+delta2=0.02
+collength=1 
+col2length=1
+while True:
+    rate(10)
+    collength=collength+delta1
+    col2length=col2length+delta1
+    col.length=collength
+    col2.length=col2length
+    if collength>=6 or collength<=0.1:
+        collength=collength*(-1)
+    if col2length>=6 or col2length<=0.1:
+        col2length=col2length*(-1)
